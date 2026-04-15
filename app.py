@@ -21,6 +21,20 @@ keras.config.enable_unsafe_deserialization()
 
 WEIGHTS_PATH = "models/best_siamese.keras"
 model = build_siamese_model((128, 128, 1))
+
+import gdown
+import os
+
+WEIGHTS_PATH = "model.weights.h5"  # whatever your filename is
+
+if not os.path.exists(WEIGHTS_PATH):
+    gdown.download(
+        f"https://drive.google.com/uc?id=YOUR_FILE_ID_HERE",
+        WEIGHTS_PATH,
+        quiet=False
+    )
+
+model.load_weights(WEIGHTS_PATH)
 model.load_weights(WEIGHTS_PATH)
 
 
