@@ -5,4 +5,11 @@ opencv-python-headless
 gdown
 pillow
 scikit-image
+scikit-learnstreamlit
+tensorflow==2.16.1
+numpy==1.26.4
+opencv-python-headless
+gdown
+pillow
+scikit-image
 scikit-learn
