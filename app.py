@@ -33,7 +33,7 @@ THRESHOLD_PATH = "dynamic_threshold.npy"
 if not os.path.exists(THRESHOLD_PATH):
     st.info("Downloading threshold file, please wait...")
     gdown.download(
-        id="YOUR_THRESHOLD_FILE_ID",   # <-- replace with your actual file ID
+        id="YOUR_THRESHOLD_FILE_ID16IIXxoJnQxjobCw1M20vKUrZkg51G5fN",  
         output=THRESHOLD_PATH,
         quiet=False,
         fuzzy=True
