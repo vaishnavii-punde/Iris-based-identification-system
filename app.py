@@ -24,8 +24,7 @@ if not os.path.exists(WEIGHTS_PATH):
     gdown.download(
         id="16IIXxoJnQxjobCw1M20vKUrZkg51G5fN",
         output=WEIGHTS_PATH,
-        quiet=False,
-        fuzzy=True
+        quiet=False
     )
 
 # ── Download dynamic threshold from Google Drive ──
@@ -33,10 +32,9 @@ THRESHOLD_PATH = "dynamic_threshold.npy"
 if not os.path.exists(THRESHOLD_PATH):
     st.info("Downloading threshold file, please wait...")
     gdown.download(
-        id="YOUR_THRESHOLD_FILE_ID16IIXxoJnQxjobCw1M20vKUrZkg51G5fN",  
+        id="16IIXxoJnQxjobCw1M20vKUrZkg51G5fN",   # <-- replace with your actual threshold file ID
         output=THRESHOLD_PATH,
-        quiet=False,
-        fuzzy=True
+        quiet=False
     )
 
 # ── Build and load model ──
