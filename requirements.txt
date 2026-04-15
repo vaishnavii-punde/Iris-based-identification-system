@@ -6,3 +6,4 @@ gdown
 pillow
 scikit-image
 scikit-learn
+matplotlib
