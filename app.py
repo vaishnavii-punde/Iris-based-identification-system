@@ -7,6 +7,11 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 from skimage.feature import local_binary_pattern
 
+import tensorflow as tf
+
+def euclidean_distance(vectors):
+    x, y = vectors
+    return tf.math.abs(x - y)
 
 # Enable unsafe deserialization (Lambda layers)
 
@@ -136,9 +141,9 @@ if p1_files and p2_files:
     # Final prediction
 
     if avg_final_score > THRESHOLD:
-        st.success("✅ SAME PERSON")
+        st.success("❌ DIFFERENT PERSON")
     else:
-        st.error("❌ DIFFERENT PERSON")
+        st.error("✅ SAME PERSON")
 
 
   
@@ -154,3 +159,18 @@ if p1_files and p2_files:
 
 else:
     st.info("Upload images for both persons to proceed.")
+
+
+import streamlit as st
+import gdown
+import os
+
+WEIGHTS_PATH = "best_siamese.keras"
+
+if not os.path.exists(WEIGHTS_PATH):
+    file_id = "16IIXxoJnQxjobCw1M20vKUrZkg51G5fN"
+    url = f"https://drive.google.com/uc?export=download&id={file_id}"
+    gdown.download(url, WEIGHTS_PATH, quiet=False)
+
+model = build_siamese_model((128, 128, 1))
+model.load_weights(WEIGHTS_PATH)
